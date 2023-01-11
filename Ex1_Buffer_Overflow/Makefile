@@ -1,13 +1,12 @@
 CFLAGS=-g -O0 -Wall -Wextra
 
-all: buffer_overflow
+all: demos_attacks
 
-buffer_overflow: bo.c
+demos_attacks: overflow_attacks.c
 	$(CC) $(CFLAGS) -o $@ $^
-	./$@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -rf buffer_overflow*
+	rm -rf demos_attacks*
